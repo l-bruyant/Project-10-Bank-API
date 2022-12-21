@@ -1,5 +1,11 @@
+
+@font-face {
+    font-family: "Lato";
+    src: url("../../assets/fonts/lato/Lato-Regular.ttf");
+}
+
 html {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Lato, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -18,7 +24,7 @@ body {
 }
 
 .bg-dark {
-  background-color: #12002b;
+  background-color: #dfe6ed;
 }
 
 .sr-only {
@@ -43,7 +49,6 @@ body {
 }
 
 .main-nav a {
-  font-weight: bold;
   color: #2c3e50;
 }
 
@@ -123,6 +128,10 @@ body {
   }
 }
 
+h1 {
+  color: #2c3e50;
+}
+
 .features {
   display: flex;
   flex-direction: column;
@@ -136,7 +145,7 @@ body {
 
 .feature-icon {
   width: 100px;
-  border: 10px solid #00bc77;
+  border: 10px solid #6458f5;
   border-radius: 50%;
   padding: 1rem;
 }
@@ -155,14 +164,19 @@ body {
 
 .sign-in-button {
   display: block;
-  width: 100%;
+  width: 94%;
   padding: 8px;
   font-size: 1.1rem;
-  font-weight: bold;
   margin-top: 1rem;
-  border-color: #00bc77;
-  background-color: #00bc77;
+  border-color: #6458f5;
+  background-color: #6458f5;
   color: #fff;
+  border-radius: 4px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+.sign-in-button:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 .sign-in-content {
@@ -193,13 +207,11 @@ body {
   margin-bottom: 1rem;
 }
 
-.input-wrapper label {
-  font-weight: bold;
-}
-
 .input-wrapper input {
   padding: 5px;
   font-size: 1.2rem;
+  border-radius: 4px;
+  border: 2px solid #c0c0c0;
 }
 
 .footer {
@@ -218,7 +230,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
+  border: 2px solid #c0c0c0;
   background-color: #fff;
   width: 80%;
   margin: 0 auto;
@@ -227,6 +239,7 @@ body {
   box-sizing: border-box;
   text-align: left;
   margin-bottom: 2rem;
+  border-radius: 4px;
 }
 
 .account-amount {
@@ -252,11 +265,12 @@ body {
 }
 
 .edit-button {
-  border-color: #00bc77;
-  background-color: #00bc77;
-  color: #fff;
-  font-weight: bold;
+  border: solid 2px #6458f5;
+  background-color: white;
+  color: #6458f5;
+  font-weight: 700;
   padding: 10px;
+  width: 120px;
 }
 
 .header {
@@ -269,11 +283,20 @@ body {
   width: 100%;
   padding: 8px;
   font-size: 1.1rem;
-  font-weight: bold;
   margin-top: 1rem;
-  border-color: #00bc77;
-  background-color: #00bc77;
+  border: none;
+  background-color: #6458f5;
   color: #fff;
+}
+
+button {
+  border: none;
+  border-radius: 4px;
+  font-family: Lato, Arial, Helvetica, sans-serif;
+}
+
+button:hover {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
 @media (min-width: 720px) {

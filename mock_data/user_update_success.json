@@ -1,0 +1,12 @@
+{
+    "status": 200,
+    "message": "Successfully updated user profile data",
+    "body": {
+        "email": "tony@stark.com",
+        "firstName": "Johnny",
+        "lastName": "Bravo",
+        "createdAt": "2022-12-21T07:27:00.275Z",
+        "updatedAt": "2022-12-21T08:25:40.464Z",
+        "id": "63a2b544f96e2c4e0cff3102"
+    }
+}
