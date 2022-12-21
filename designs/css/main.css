@@ -21,6 +21,12 @@ body {
 
 .main {
   flex: 1;
+  min-height: 80vh;
+}
+
+main {
+  flex: 1;
+  min-height: 80vh;
 }
 
 .bg-dark {
