@@ -110,6 +110,64 @@ paths:
           description: Invalid Fields
         '500':
           description: Internal Server Error
+  /user/transactions/current-month:
+    post:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: NEW SUGGESTION : Get Transactions List
+      description: Receive all transactions for the current user, including transaction details
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transactions data received
+          schema:
+            $ref: '#/definitions/TransactionsList'
+        '401':
+          description: Authentication error
+        '404':
+          description: Transactions data not found
+        '500':
+          description: Internal Server Error
+  /user/transactions/transaction-details:
+    put:
+      security:
+        - Bearer: []
+      tags:
+        - User Module
+      summary: NEW SUGGESTION : Edit Transaction
+      description: API for updating the details of a specific transaction
+      parameters:
+        - in: header
+          name: Authorization
+          description: Attach Bearer JWT token
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Update transaction
+          required: true
+          schema:
+            $ref: '#/definitions/NewTransactionData'
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: Transaction data updated
+        '401':
+          description: Authentication error
+        '404':
+          description: Transaction not found
+        '500':
+          description: Internal Server Error
 securityDefinitions:
   Bearer:
     type: apiKey
@@ -164,3 +222,38 @@ definitions:
         type: string
       lastName:
         type: string
+  TransactionsList:
+    properties:
+      transactions:
+        type: array
+        description: user transactions table of objects
+        items: 
+          type: object
+          properties:
+            transactionId:
+              type: string
+            transactionDate:
+              type: string
+            transactionDescription:
+              type: string
+            transactionType:
+              type: string
+            transactionCategory:
+              type: string
+            transactionNotes:
+              type: string
+            transactionAmount:
+              type: integer
+            transactionBalance: 
+              type: integer
+  NewTransactionData:
+    type: object
+    properties:
+      transactionId:
+        type: string
+      transactionType:
+        type: string
+      transactionCategory:
+        type: string
+      transactionNotes:
+        type: string  
